@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="2" >
+
+    <dataSet config="main" >
+        <source path="/Users/fase/Downloads/AndroidBuildingMusicPlayer/app/src/main/assets" >
+            <file
+                name="songs/sample.mp3"
+                path="/Users/fase/Downloads/AndroidBuildingMusicPlayer/app/src/main/assets/songs/sample.mp3" />
+        </source>
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="/Users/fase/Downloads/AndroidBuildingMusicPlayer/app/src/debug/assets" />
+    </dataSet>
+
+</merger>
