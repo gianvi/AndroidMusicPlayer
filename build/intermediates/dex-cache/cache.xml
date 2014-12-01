@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pre-dex-items>
+
+    <item
+        dex="/Users/fase/Downloads/AndroidBuildingMusicPlayer/app/build/intermediates/pre-dexed/debug/json_simple-1.1-f6237d63fec73624ca9ae6533161407361aca075.jar"
+        jar="/Users/fase/Downloads/AndroidBuildingMusicPlayer/app/src/libs/lib/json_simple-1.1.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="5e303a03d04e6788dddfa3655272580ae0fc13bb"/>
+    <item
+        dex="/Users/fase/Downloads/AndroidBuildingMusicPlayer/app/build/intermediates/pre-dexed/debug/jEN-3cd1231717b5637203b18e128c0020d26a1aa811.jar"
+        jar="/Users/fase/Downloads/AndroidBuildingMusicPlayer/app/src/libs/jEN.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="66f06bffb65dfc4b7c9ffb1b2e59131294a888e3"/>
+
+</pre-dex-items>

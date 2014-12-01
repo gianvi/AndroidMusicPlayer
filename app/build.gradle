@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 8
+    compileSdkVersion 19
     buildToolsVersion "20.0.0"
 
     defaultConfig {
         applicationId "com.androidhive.musicplayer"
-        minSdkVersion 8
-        targetSdkVersion 8
+        minSdkVersion 9
+        targetSdkVersion 19
     }
 
     buildTypes {
@@ -17,3 +17,11 @@ android {
         }
     }
 }
+
+dependencies {
+    compile files('libs/jEN.jar')
+    compile files('libs/lib/json_simple-1.1.jar')
+    compile files('src/libs/jEN.jar')
+    compile files('src/libs/lib/json_simple-1.1.jar')
+}
+

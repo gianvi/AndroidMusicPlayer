@@ -6,6 +6,7 @@ import java.util.HashMap;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -13,11 +14,17 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
+import com.echonest.api.v4.EchoNestException;
+
 public class PlayListActivity extends ListActivity {
 	// Songs list
 	public ArrayList<HashMap<String, String>> songsList = new ArrayList<HashMap<String, String>>();
 
-	@Override
+    //Echonest songs list
+    public ArrayList<HashMap<String, String>> songsEchoList = new ArrayList<HashMap<String, String>>();
+
+
+    @Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.playlist);
@@ -25,10 +32,22 @@ public class PlayListActivity extends ListActivity {
 		ArrayList<HashMap<String, String>> songsListData = new ArrayList<HashMap<String, String>>();
 
 		SongsManager plm = new SongsManager();
+
+        //ottieni lista songs from echonest
+        try {
+            this.songsEchoList = plm.getEchonestPlaylist();
+        }catch(EchoNestException ee){
+            Log.v("getEchonestPlaylist EchonestException: ", ee.toString());
+        }
+        catch (Exception e) {
+            Log.v("getEchonestPlaylist TaskException: ", e.toString());
+        }
+
+
 		// get all songs from sdcard
 		this.songsList = plm.getPlayList();
 
-		// looping through playlist
+		// looping through local playlist
 		for (int i = 0; i < songsList.size(); i++) {
 			// creating new HashMap
 			HashMap<String, String> song = songsList.get(i);
@@ -37,7 +56,17 @@ public class PlayListActivity extends ListActivity {
 			songsListData.add(song);
 		}
 
-		// Adding menuItems to ListView
+        // looping through echonest playlist
+        for (int i = 0; i < songsEchoList.size(); i++) {
+            // creating new HashMap
+            HashMap<String, String> song = songsEchoList.get(i);
+
+            // adding HashList to ArrayList
+            songsListData.add(song);
+        }
+
+
+        // Adding menuItems to ListView
 		ListAdapter adapter = new SimpleAdapter(this, songsListData,
 				R.layout.playlist_item, new String[] { "songTitle" }, new int[] {
 						R.id.songTitle });

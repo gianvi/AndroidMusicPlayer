@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.androidhive.musicplayer.EchonestGeoPlaylist" >
+    <item android:id="@+id/action_settings"
+        android:title="@string/action_settings"
+        android:orderInCategory="100"
+
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" />
+</menu>
+
+<!-- From: file:/Users/fase/git/audio_player/AndroidBuildingMusicPlayer/app/src/main/res/menu/echonest_geo_playlist.xml -->

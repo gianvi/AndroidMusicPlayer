@@ -77,7 +77,7 @@ public class AndroidBuildingMusicPlayerActivity extends Activity implements OnCo
 		songsList = songManager.getPlayList();
 		
 		// By default play first song
-		//playSong(0);
+		playSong(0);
 				
 		/**
 		 * Play button click event
